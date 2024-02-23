@@ -36,9 +36,9 @@ const Navbar = () => {
           }
         </nav>
         <div className="flex items-center space-x-2">
-        <a href="/Login" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white transition-colors duration-300">Login</a>
-        <a href="/Register" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white transition-colors duration-300">Sign Up</a>
-        <a href="/Cart" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white flex items-center transition-colors duration-300">
+        <a href="/login" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white transition-colors duration-300">Login</a>
+        <a href="/register" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white transition-colors duration-300">Sign Up</a>
+        <a href="/cart" className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-[#b642be] hover:text-white flex items-center transition-colors duration-300">
         <i className="fa fa-shopping-cart me-1"></i>Cart</a>
         </div>
       </div>
