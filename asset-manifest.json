@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/EMart/static/css/main.3a3c8439.css",
-    "main.js": "/EMart/static/js/main.f07bf19f.js",
+    "main.js": "/EMart/static/js/main.820ae024.js",
     "static/js/592.709af8f2.chunk.js": "/EMart/static/js/592.709af8f2.chunk.js",
     "index.html": "/EMart/index.html",
     "main.3a3c8439.css.map": "/EMart/static/css/main.3a3c8439.css.map",
-    "main.f07bf19f.js.map": "/EMart/static/js/main.f07bf19f.js.map",
+    "main.820ae024.js.map": "/EMart/static/js/main.820ae024.js.map",
     "592.709af8f2.chunk.js.map": "/EMart/static/js/592.709af8f2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a3c8439.css",
-    "static/js/main.f07bf19f.js"
+    "static/js/main.820ae024.js"
   ]
 }
