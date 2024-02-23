@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 const images = [
-  '/shoeshp.png',
-  '/clotheshp2.png',
-  '/watchhp.png',
+  `${process.env.PUBLIC_URL}/shoeshp.png`,
+  `${process.env.PUBLIC_URL}/clotheshp2.png`,
+  `${process.env.PUBLIC_URL}/watchhp.png`,
 ];
 
 const Carousel = () => {
