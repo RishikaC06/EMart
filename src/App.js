@@ -16,7 +16,8 @@ function App() {
     <div>
       <Navbar/>
       <Routes>
-        <Route path='/' exact element={<Home/>}/>
+        {/* <Route path='/' exact element={<Home/>}/> */}
+        <Route index element={<Home />} />
         <Route path='/products/:id' exact element={<Product/>}/>
         <Route path="/products" element={<Products/>} />
         <Route path="/categories/:name" element={<CategoryProducts/>} />
