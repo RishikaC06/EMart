@@ -1,88 +1,49 @@
-import React,{ useState }from 'react'
-import styled from "styled-components"
-import {mobile,tablet} from "../Responsive";
-
-const Container = styled.div`
-    width:100vw;
-    height: 100vh;
-    background: rgb(161,228,235);
-    background: linear-gradient(0deg, #b8f1f7 42%, rgba(219, 211, 252, 0.987) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`
-
-const Wrapper = styled.div`
-    width: 40%;
-    padding:10%;
-    background-color: white;
-    border-radius: 10px;
-    ${mobile({width: "60%",height:"40%"})}
-`
-
-const Form = styled.form`
-    display: flex;
-    flex-direction: column;
-`
-
-const Title = styled.h1`
-    font-weight: 600;
-    margin: auto;
-    text-align: center;
-    ${mobile({fontSize: "40px"})}
-    ${tablet({fontSize: "50px"})}
-    font-size: 60px;
-`
-
-const Input = styled.input`
-    min-width: 30%;
-    flex:1;
-    padding: 1%;
-    margin: 5px; /* Add margin for spacing between inputs */
-    ${mobile({fontSize: "20px"})}
-    ${tablet({fontSize: "25px"})}
-    font-size: 30px;
-`
-const Link = styled.a`
-    margin: 10px 0px;
-    font-size: 20px;
-    ${tablet({fontSize: "15px"})}
-    ${mobile({fontSize: "15px"})}
-    text-decoration: underline;
-    cursor: pointer;
-`
-
-const Button = styled.button`
-    margin: auto;
-    padding: 1%;
-    width: 30%;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: #E04D83;
-    color: whitesmoke;
-    font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    ${mobile({width: "50%",fontSize:"20px"})}
-    ${tablet({Width: "60%",fontSize:"20px"})}
-`
-
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const navigate = useNavigate()
   
   return (
-    <Container>
-        <Wrapper>
-            <Title> SIGN IN</Title>
-            <Form> 
-                <Input placeholder="user_name"/> 
-                <Input placeholder="password" type='password'/> 
-                <Button>Sign In</Button>   
-                <Link>Forgot Password</Link>
-            </Form>
-        </Wrapper> 
-    </Container>
+    <>
+        <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 bg-[#f4edf5]">
+            <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-[#b642be]">Sign in to your account</h2>
+            </div>
+
+            <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                <form class="space-y-6" action="#" method="POST">
+                    <div>
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                        <div class="mt-2">
+                            <input id="email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-center justify-between">
+                            <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                            <div class="text-sm">
+                                <a href="#" class="font-semibold text-[#b642be] hover:text-[#d15ad9]">Forgot password?</a>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <input id="password" name="password" type="password" autocomplete="current-password" required class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="flex w-full justify-center rounded-md bg-[#b642be] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#d15ad9] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+                    </div>
+                </form>
+
+                <p class="mt-10 text-center text-sm text-gray-500">
+                    Not a member?
+                    <button class="font-semibold leading-6 text-[#b642be] hover:text-[#d15ad9]" onClick={() => navigate('/register')}>  Sign Up</button>
+                </p>
+            </div>
+        </div>
+    </>
   )
 }
 

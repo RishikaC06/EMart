@@ -26,7 +26,7 @@ const Home = () => {
       :
       <div>Loading.....</div>
     }
-    <ProductCard/>
+    {/* <ProductCard/> */}
     <Categories/>
     </>
   )

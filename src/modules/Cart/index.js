@@ -27,29 +27,59 @@ const Cart = () => {
     navigate('/cart')
   }
 
+  // const handleDec = (id) => {
+  //   const updatedCart = carts.map(item => {
+  //     if(item.id === id) {
+  //       return {
+  //         ...item,
+  //         quantity: item.quantity - 1
+  //       }
+  //     }
+  //     return item
+  //   })
+  //   localStorage.setItem('cart', JSON.stringify(updatedCart))
+  //   navigate('/cart')
+  // }
+
+  // const removeProduct = (id) => {
+  //   const updatedCart = carts.filter(item => item.id !== id)
+  //   localStorage.setItem('cart', JSON.stringify(updatedCart))
+  //   navigate('/cart')
+  // }
+
+  // if(carts.length === 0) {
+  //   return <div className=' h-[55vh] flex justify-center items-center text-4xl '>Cart is Empty</div>
+  // }
+
   const handleDec = (id) => {
     const updatedCart = carts.map(item => {
-      if(item.id === id) {
-        return {
-          ...item,
-          quantity: item.quantity - 1
+      if (item.id === id) {
+        if (item.quantity === 1) {
+          removeProduct(id);
+          return null; // This will be filtered out later
+        } else {
+          return {
+            ...item,
+            quantity: item.quantity - 1
+          };
         }
       }
-      return item
-    })
-    localStorage.setItem('cart', JSON.stringify(updatedCart))
-    navigate('/cart')
-  }
-
+      return item;
+    }).filter(item => item !== null); // Filter out null items
+  
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    navigate('/cart');
+  };
+  
   const removeProduct = (id) => {
-    const updatedCart = carts.filter(item => item.id !== id)
-    localStorage.setItem('cart', JSON.stringify(updatedCart))
-    navigate('/cart')
-  }
-
-  if(carts.length === 0) {
-    return <div className=' h-[55vh] flex justify-center items-center text-4xl '>Cart is Empty</div>
-  }
+    const updatedCart = carts.filter(item => item.id !== id);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    navigate('/cart');
+  };
+  
+  if (carts.length === 0) {
+    return <div className='h-[55vh] flex justify-center items-center text-4xl'>Cart is Empty</div>;
+  }  
 
   return (
     <div className="container mx-auto mt-10">
@@ -115,11 +145,6 @@ const Cart = () => {
               <option>Standard shipping - $10.00</option>
             </select>
           </div>
-          {/* <div className="py-10">
-            <label for="promo" className="font-semibold inline-block mb-3 text-sm uppercase">Promo Code</label>
-            <input type="text" id="promo" placeholder="Enter your code" className="p-2 text-sm w-full" />
-          </div>
-          <button className="bg-red-500 hover:bg-red-600 px-5 py-2 text-sm text-white uppercase">Apply</button> */}
           <div className="border-t mt-8">
             <div className="flex font-semibold justify-between py-6 text-sm uppercase">
               <span>Total cost</span>
