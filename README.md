@@ -11,7 +11,11 @@ Click below link to view the project
 [EMart](https://rishikac06.github.io/EMart/)
 
 ## Steps to Clone and Run the Application
-### 1. Clone the Repository then move to emart directory
+### 1. Clone the Repository then move to EMart directory
+``` 
+git clone https://github.com/RishikaC06/EMart.git
+cd EMart
+```
 ### 2. Install Dependencies:
 ```
 npm install
